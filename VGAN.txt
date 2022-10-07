@@ -1,0 +1,184 @@
+1 Physical GPUs, 1 Logical GPUs
+Model: "generator"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_2 (InputLayer)           [(None,)]            0           []                               
+                                                                                                  
+ input_1 (InputLayer)           [(None, 100)]        0           []                               
+                                                                                                  
+ tf.one_hot (TFOpLambda)        (None, 10)           0           ['input_2[0][0]']                
+                                                                                                  
+ tf.concat (TFOpLambda)         (None, 110)          0           ['input_1[0][0]',                
+                                                                  'tf.one_hot[0][0]']             
+                                                                                                  
+ sequential (Sequential)        (None, 28, 28, 1)    402097      ['tf.concat[0][0]']              
+                                                                                                  
+==================================================================================================
+Total params: 402,097
+Trainable params: 395,729
+Non-trainable params: 6,368
+__________________________________________________________________________________________________
+Model: "discriminator"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_4 (InputLayer)           [(None,)]            0           []                               
+                                                                                                  
+ embedding (Embedding)          (None, 32)           320         ['input_4[0][0]']                
+                                                                                                  
+ dense_1 (Dense)                (None, 784)          25872       ['embedding[0][0]']              
+                                                                                                  
+ input_3 (InputLayer)           [(None, 28, 28, 1)]  0           []                               
+                                                                                                  
+ reshape_1 (Reshape)            (None, 28, 28, 1)    0           ['dense_1[0][0]']                
+                                                                                                  
+ tf.concat_1 (TFOpLambda)       (None, 28, 28, 2)    0           ['input_3[0][0]',                
+                                                                  'reshape_1[0][0]']              
+                                                                                                  
+ sequential_2 (Sequential)      (None, 1)            140353      ['tf.concat_1[0][0]']            
+                                                                                                  
+==================================================================================================
+Total params: 166,545
+Trainable params: 166,161
+Non-trainable params: 384
+__________________________________________________________________________________________________
+ep=0 | time=4.07 | t=0  | d_loss=0.15881 | g_loss=32.12815 | v_loss=32.12174
+The best accuracy is: 11.39
+ep=0 | time=9.68 | t=1  | d_loss=-0.02169 | g_loss=28.80412 | v_loss=28.79752
+The best accuracy is: 12.879999999999999
+ep=0 | time=19.01 | t=10  | d_loss=-3.29585 | g_loss=17.52412 | v_loss=17.89426
+The best accuracy is: 19.79
+ep=0 | time=155.49 | t=253  | d_loss=-3.58549 | g_loss=-2.27234 | v_loss=0.00664
+The best accuracy is: 23.54
+ep=0 | time=394.01 | t=692  | d_loss=-1.04845 | g_loss=1.40274 | v_loss=0.07275
+The best accuracy is: 24.13
+ep=0 | time=408.61 | t=711  | d_loss=-1.06415 | g_loss=1.38174 | v_loss=0.07007
+The best accuracy is: 25.47
+ep=0 | time=433.86 | t=752  | d_loss=-1.07248 | g_loss=1.99370 | v_loss=0.01205
+The best accuracy is: 27.52
+ep=0 | time=441.29 | t=758  | d_loss=-1.13037 | g_loss=1.38900 | v_loss=0.02582
+The best accuracy is: 29.830000000000002
+ep=0 | time=468.36 | t=804  | d_loss=-1.17030 | g_loss=1.21629 | v_loss=0.03646
+The best accuracy is: 30.91
+ep=0 | time=496.35 | t=854  | d_loss=-0.94740 | g_loss=3.57659 | v_loss=0.01076
+The best accuracy is: 35.730000000000004
+ep=0 | time=508.26 | t=870  | d_loss=-1.42231 | g_loss=4.34703 | v_loss=0.13818
+The best accuracy is: 36.21
+ep=0 | time=519.38 | t=884  | d_loss=-1.14670 | g_loss=2.88624 | v_loss=0.01624
+The best accuracy is: 41.91
+ep=0 | time=536.79 | t=912  | d_loss=-0.92313 | g_loss=2.63096 | v_loss=0.01026
+The best accuracy is: 42.94
+ep=0 | time=551.91 | t=935  | d_loss=-0.88853 | g_loss=3.66887 | v_loss=0.00965
+The best accuracy is: 44.3
+ep=0 | time=563.80 | t=951  | d_loss=-0.84821 | g_loss=3.49412 | v_loss=0.00757
+The best accuracy is: 44.519999999999996
+ep=0 | time=569.47 | t=953  | d_loss=-1.06182 | g_loss=3.28917 | v_loss=0.00513
+The best accuracy is: 44.91
+ep=0 | time=576.93 | t=959  | d_loss=-0.88572 | g_loss=1.60758 | v_loss=0.00354
+The best accuracy is: 45.89
+ep=0 | time=583.01 | t=962  | d_loss=-0.92183 | g_loss=3.45043 | v_loss=0.03652
+The best accuracy is: 46.660000000000004
+ep=0 | time=590.92 | t=969  | d_loss=-0.87309 | g_loss=0.75162 | v_loss=0.06095
+The best accuracy is: 48.980000000000004
+ep=0 | time=597.92 | t=974  | d_loss=-1.10599 | g_loss=3.77285 | v_loss=0.02046
+The best accuracy is: 49.64
+ep=0 | time=611.82 | t=995  | d_loss=-0.85901 | g_loss=2.29770 | v_loss=0.00399
+The best accuracy is: 52.739999999999995
+ep=0 | time=617.91 | t=998  | d_loss=-1.10323 | g_loss=1.87914 | v_loss=0.04542
+The best accuracy is: 53.18000000000001
+ep=0 | time=645.17 | t=1049  | d_loss=-0.90413 | g_loss=0.34534 | v_loss=0.00249
+The best accuracy is: 54.99000000000001
+ep=0 | time=664.41 | t=1081  | d_loss=-0.56836 | g_loss=0.57194 | v_loss=0.02366
+The best accuracy is: 56.06
+ep=0 | time=669.50 | t=1082  | d_loss=-0.66075 | g_loss=-0.13787 | v_loss=0.00409
+The best accuracy is: 56.36
+ep=0 | time=679.42 | t=1094  | d_loss=-0.75849 | g_loss=0.15570 | v_loss=0.01028
+The best accuracy is: 56.769999999999996
+ep=0 | time=684.48 | t=1095  | d_loss=-0.58038 | g_loss=0.61135 | v_loss=0.07475
+The best accuracy is: 59.03
+ep=0 | time=703.17 | t=1127  | d_loss=-0.46674 | g_loss=-0.49443 | v_loss=0.03966
+The best accuracy is: 59.040000000000006
+ep=0 | time=708.77 | t=1129  | d_loss=-0.57440 | g_loss=0.19185 | v_loss=0.01524
+The best accuracy is: 59.809999999999995
+ep=0 | time=716.00 | t=1135  | d_loss=-0.63500 | g_loss=0.85280 | v_loss=0.00495
+The best accuracy is: 60.38
+ep=0 | time=727.25 | t=1150  | d_loss=-0.67439 | g_loss=0.39472 | v_loss=0.00814
+The best accuracy is: 60.84
+ep=0 | time=740.85 | t=1171  | d_loss=-0.32660 | g_loss=-0.73313 | v_loss=0.06700
+The best accuracy is: 61.06
+ep=0 | time=747.86 | t=1176  | d_loss=-0.51822 | g_loss=0.60477 | v_loss=0.02208
+The best accuracy is: 61.89
+ep=0 | time=755.25 | t=1182  | d_loss=-0.47107 | g_loss=-1.00271 | v_loss=0.00870
+The best accuracy is: 63.019999999999996
+ep=0 | time=761.86 | t=1186  | d_loss=-0.67349 | g_loss=0.19231 | v_loss=0.00532
+The best accuracy is: 63.17
+ep=0 | time=774.98 | t=1205  | d_loss=-0.48778 | g_loss=-0.14172 | v_loss=0.01155
+The best accuracy is: 63.55
+ep=0 | time=782.29 | t=1211  | d_loss=-0.43806 | g_loss=-0.59104 | v_loss=0.05901
+The best accuracy is: 63.9
+ep=0 | time=788.39 | t=1214  | d_loss=-0.55470 | g_loss=-1.07249 | v_loss=0.00722
+The best accuracy is: 64.02
+ep=0 | time=794.03 | t=1216  | d_loss=-0.68967 | g_loss=-0.58551 | v_loss=0.00362
+The best accuracy is: 64.07000000000001
+ep=0 | time=802.41 | t=1225  | d_loss=-0.62757 | g_loss=-0.60143 | v_loss=0.00214
+The best accuracy is: 64.84
+ep=0 | time=822.80 | t=1262  | d_loss=-0.71936 | g_loss=-0.17681 | v_loss=0.00566
+The best accuracy is: 66.36
+ep=0 | time=832.10 | t=1273  | d_loss=-0.44683 | g_loss=-0.40991 | v_loss=0.05323
+The best accuracy is: 67.19000000000001
+ep=0 | time=837.28 | t=1274  | d_loss=-0.58916 | g_loss=-0.35405 | v_loss=0.01862
+The best accuracy is: 67.47
+ep=0 | time=887.12 | t=1381  | d_loss=-0.44666 | g_loss=-1.02222 | v_loss=0.01006
+The best accuracy is: 67.89
+ep=0 | time=903.33 | t=1408  | d_loss=-0.47886 | g_loss=-1.20973 | v_loss=0.02349
+The best accuracy is: 68.03
+ep=0 | time=935.53 | t=1473  | d_loss=-0.44423 | g_loss=-1.66076 | v_loss=0.02721
+The best accuracy is: 68.15
+ep=0 | time=956.11 | t=1511  | d_loss=-0.27959 | g_loss=-1.91159 | v_loss=0.05392
+The best accuracy is: 68.39
+ep=0 | time=966.34 | t=1524  | d_loss=-0.41163 | g_loss=-1.33156 | v_loss=0.00496
+The best accuracy is: 68.46
+ep=0 | time=971.52 | t=1525  | d_loss=-0.41500 | g_loss=-0.90932 | v_loss=0.09202
+The best accuracy is: 69.38
+ep=0 | time=1002.39 | t=1588  | d_loss=-0.52127 | g_loss=-1.07076 | v_loss=0.00247
+The best accuracy is: 69.93
+ep=0 | time=1028.78 | t=1642  | d_loss=-0.66412 | g_loss=-1.23063 | v_loss=0.01591
+The best accuracy is: 70.42
+ep=1 | time=1273.88 | t=346  | d_loss=-0.46765 | g_loss=-0.04906 | v_loss=0.03503
+The best accuracy is: 70.58
+ep=1 | time=1317.41 | t=437  | d_loss=-0.43679 | g_loss=-0.98358 | v_loss=0.06594
+The best accuracy is: 71.45
+ep=1 | time=1520.64 | t=913  | d_loss=-0.28376 | g_loss=-0.50313 | v_loss=0.05108
+The best accuracy is: 71.61
+ep=1 | time=1574.10 | t=1028  | d_loss=-0.47341 | g_loss=-0.37200 | v_loss=0.01512
+The best accuracy is: 71.95
+ep=1 | time=1644.92 | t=1188  | d_loss=-0.32773 | g_loss=-0.69906 | v_loss=0.00552
+The best accuracy is: 73.03
+ep=1 | time=1801.33 | t=1546  | d_loss=-0.40039 | g_loss=0.09604 | v_loss=0.00279
+The best accuracy is: 73.22999999999999
+ep=2 | time=1963.66 | t=47  | d_loss=-0.45250 | g_loss=0.59700 | v_loss=0.02415
+The best accuracy is: 73.38
+ep=2 | time=1975.87 | t=64  | d_loss=-0.42778 | g_loss=-0.00537 | v_loss=0.00200
+The best accuracy is: 73.48
+ep=2 | time=2030.48 | t=183  | d_loss=-0.16556 | g_loss=0.47353 | v_loss=0.00669
+The best accuracy is: 73.5
+ep=2 | time=2069.19 | t=259  | d_loss=-0.34416 | g_loss=-0.54275 | v_loss=0.05155
+The best accuracy is: 73.83
+ep=2 | time=2217.53 | t=590  | d_loss=-0.28940 | g_loss=0.02036 | v_loss=0.02846
+The best accuracy is: 74.13
+ep=2 | time=2254.69 | t=667  | d_loss=-0.37239 | g_loss=0.64090 | v_loss=0.04556
+The best accuracy is: 74.32
+ep=2 | time=2318.79 | t=810  | d_loss=-0.38161 | g_loss=0.19948 | v_loss=0.00440
+The best accuracy is: 75.1
+ep=2 | time=2494.75 | t=1221  | d_loss=-0.26131 | g_loss=0.73091 | v_loss=0.01012
+The best accuracy is: 76.1
+ep=3 | time=2970.78 | t=458  | d_loss=-0.30018 | g_loss=-0.42914 | v_loss=0.06897
+The best accuracy is: 76.59
+ep=3 | time=3200.45 | t=971  | d_loss=-0.23318 | g_loss=-0.39862 | v_loss=0.00363
+The best accuracy is: 77.37
+ep=4 | time=3637.03 | t=107  | d_loss=-0.04261 | g_loss=-0.56602 | v_loss=0.00933
+The best accuracy is: 77.5
+The last accuracy is: 66.14999999999999
+total running : 4391.253717660904
+<Figure size 432x288 with 0 Axes>

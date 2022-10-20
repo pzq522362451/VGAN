@@ -2,16 +2,21 @@
 
 ## The V-matrix based generative adversarial network (condtional)
 
-Code accompanying the paper "VGAN: Generalizing MSE GAN and WGAN-GP for Robot Fault Diagnosis" by Ziqiang Pu, Diego Cabrera, Chuan Li and José Valente de Oliveira, *IEEE Intelligent Systems*, vol. 37, no. 3, pp. 65-75,2022. (Links: https://ieeexplore.ieee.org/abstract/document/9760080) 
-
-
-(Ready to be submitted for publication).
-
-
+Code accompanying the paper "VGAN: Generalizing MSE GAN and WGAN-GP for Robot Fault Diagnosis" by Ziqiang Pu, Diego Cabrera, Chuan Li and José Valente de Oliveira, *IEEE Intelligent Systems*, vol. 37, no. 3, pp. 65-75,2022. 
+(Links: https://ieeexplore.ieee.org/abstract/document/9760080) 
 
 
 -  Tensorflow 2.0 implementation
--  Inspired by Deshpande $et$ $al$. [sliced Wassetstein generator] (https://openaccess.thecvf.com/content_cvpr_2018/papers/Deshpande_Generative_Modeling_Using_CVPR_2018_paper.pdf), the sliced wasserstein distance (SWD) gains less computation and fast convergence than Wasserstein distance (WD). The code for SWD is shown in (https://github.com/ishansd/swg).
+-  Inspired by Yang $et$ $al$. [Statistical Parametric Speech Synthesis Using Generative Adversarial Networks Under A Multi-task Learning Framework] (https://arxiv.org/pdf/1707.01670.pdf), the mean square error loss set as an additional regularization on GAN's loss. 
+-  
+-  Vapnik $et$ $al$. [] (), the new thinking about the mean square error estimation. The cassical estimation is given by "" while with rethinking by Vapnik $et$ $al$, the about equation can be given by "" where V(i,j) can be expressed as "V(i,j)=\sum_{k=1}^{d}(c_{k}-max(x_{i}^{k},x{j}^{k}))"  
+-  
+-  
+-  
+-  Yang $et$ $al$. [Statistical Parametric Speech Synthesis Using Generative Adversarial Networks Under A Multi-task Learning Framework] (https://arxiv.org/pdf/1707.01670.pdf), the mean square error loss set as an additional regularization on GAN's loss. 
+
+
+-  The code for SWD is shown in (https://github.com/ishansd/swg).
 -  This repository contains reprodce of several experiments mentioned in the paper
 -  Both unconditional and conditional SW-CycleGAN were verified with the MNIST handwritting dataset.
 -  The implementation for CycleGAN using the MNIST dataset is shown in (https://github.com/MorvanZhou/mnistGANs)

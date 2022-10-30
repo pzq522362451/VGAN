@@ -7,7 +7,7 @@ Code accompanying the paper "VGAN: Generalizing MSE GAN and WGAN-GP for Robot Fa
 
 -  Tensorflow 2.0 implementation
 -  Inspired by Yang $et$ $al$. [Statistical Parametric Speech Synthesis Using Generative Adversarial Networks Under A Multi-task Learning Framework] (https://arxiv.org/pdf/1707.01670.pdf), the mean square error loss set as an additional regularization on GAN's loss.  
--  Vapnik $et$ $al$. [] (), the new thinking about the mean square error estimation. The cassical estimation is given by "" while with rethinking by Vapnik $et$ $al$, the about equation can be given by "" where V(i,j) can be expressed as "V(i,j)=\sum_{k=1}^{d}(c_{k}-max(x_{i}^{k},x{j}^{k}))"  
+-  Vapnik $et$ $al$. [Rethinking statistical learning theory: learning using statistical invariants] (https://link.springer.com/content/pdf/10.1007/s10994-018-5742-0.pdf), the new thinking about the mean square error estimation. 
 -  Yang $et$ $al$. [Statistical Parametric Speech Synthesis Using Generative Adversarial Networks Under A Multi-task Learning Framework] (https://arxiv.org/pdf/1707.01670.pdf), the mean square error loss set as an additional regularization on GAN's loss. 
 
 -  This repository contains reprodce of several experiments mentioned in the paper
